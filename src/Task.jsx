@@ -1,15 +1,17 @@
 import React from 'react'
 
-const Task = () => {
+const Task = ({ time, task }) => {
     return (
-        <div className="taskContainer">
-            <div className="task-time">
-                <p>12:00</p>
+        <>
+            <div className="task-container">
+                <div className="task-time">
+                    <span>{time}</span>
+                </div>
+                <div className="task">
+                    <span>{task}</span>
+                </div>
             </div>
-            <div className="task">
-                <p> Perform this task</p>
-            </div>
-        </div>
+        </>
     )
 }
 
