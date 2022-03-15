@@ -13,10 +13,10 @@ const App = () => {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setWeatherUrl(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&exclude=hourly,minutely,alerts&appid={insert your openweathermap api key here}`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&exclude=hourly,minutely,alerts&appid=${process.env.REACT_APP_OPENWEATHERMAP_APPID}`
       );
       setGeoUrl(
-        `https://eu1.locationiq.com/v1/reverse.php?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}&key={insert your locaitoniq api key here}`
+        `https://eu1.locationiq.com/v1/reverse.php?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=${process.env.REACT_APP_LOCTIONIQ_KEY}`
       );
     });
     const fetchWeatherData = async () => {
@@ -41,11 +41,9 @@ const App = () => {
   }, [geoUrl]);
 
   return (
-    <div className="app-container">
-      <div className="app-main">
-        {Object.keys(geoData).length > 0 && <ToDo geoData={geoData} />}
-        {Object.keys(weatherData).length > 0 && <Weathers data={weatherData} />}
-      </div>
+    <div className="app-main">
+      {Object.keys(geoData).length > 0 && <ToDo geoData={geoData} />}
+      {Object.keys(weatherData).length > 0 && <Weathers data={weatherData} />}
     </div>
   );
 };

@@ -1,12 +1,17 @@
 /*Calculations for the Date-Time display*/
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+export const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const dateTime = new Date();
 
 let hour = dateTime.getHours();
+
 const tt = hour > 12 ? 'PM' : 'AM';
-hour > 12 ? hour -= 12 : hour;
+
+if (hour > 12) {
+    hour = hour - 12;
+}
+
 const minute = dateTime.getMinutes();
 
 const dayNum = dateTime.getDay();
@@ -38,6 +43,3 @@ export const TaskList = [
         'task': 'Take the car to the garage'
     }
 ];
-
-
-//https://eu1.locationiq.com/v1/reverse.php?format=json&lat=13.1&lon=77.64&key=pk.06f76a97a564d42a54cd28dcb9a80559
