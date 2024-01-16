@@ -1,0 +1,44 @@
+main {
+    align-items: center;
+    background: linear-gradient(
+        to left bottom,
+        #1e3e66,
+        #3d4c7a,
+        #5c598d,
+        #7c679f,
+        #9d74ae
+    );
+    display: flex;
+    height: 100dvh;
+    justify-content: center;
+    width: 100dvw;
+}
+
+.app-container {
+    background: linear-gradient(
+        to right bottom,
+        #128bd6,
+        #2b95de,
+        #3c9fe6,
+        #4aa9ed,
+        #58b3f5,
+        #4eb2ec,
+        #47b1e3,
+        #44afd9,
+        #37a1bc,
+        #34929f,
+        #388285,
+        #3b726d
+    );
+    display: grid;
+    grid-template-rows: 8fr 2fr;
+    margin-inline: auto;
+    max-height: 80vh;
+    max-width: 60vw;
+}
+
+.top-container {
+}
+
+.bottom-container {
+}
